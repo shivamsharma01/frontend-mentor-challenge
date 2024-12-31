@@ -1,0 +1,79 @@
+:root {
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+  --text-gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+.font-size-default {
+  font-size: 20px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--neutral-0);
+  background: url(../../../../public/assets/conference-ticket-generator/images/background-mobile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.description {
+  color: var(--neutral-500);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  background: url(../../../../public/assets/conference-ticket-generator/images/logo-full.svg),
+    url(../../../../public/assets/conference-ticket-generator/images/pattern-circle.svg),
+    url(../../../../public/assets/conference-ticket-generator/images/pattern-circle.svg),
+    url(../../../../public/assets/conference-ticket-generator/images/pattern-lines.svg),
+    url(../../../../public/assets/conference-ticket-generator/images/pattern-squiggly-line-top.svg),
+    url(../../../../public/assets/conference-ticket-generator/images/pattern-squiggly-line-bottom.svg);
+  background-position: center 2%, 5% -15%, 67% 70%, 2%, 100% 10%, 0% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat;
+  background-size: auto, auto, auto, auto, auto, auto;
+  margin-top: 10px;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .root {
+    background: url(../../../../public/assets/conference-ticket-generator/images/background-tablet.png);
+  }
+}
+
+@media (min-width: 1025px) {
+  .root {
+    background: url(../../../../public/assets/conference-ticket-generator/images/background-desktop.png);
+  }
+}
