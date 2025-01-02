@@ -10,10 +10,14 @@
         </h2>
       </div>
       <div class="main-content mb-5">
-        <form class="m-auto mt-5">
+        <form
+          class="m-auto mt-5"
+          [formGroup]="ticketForm"
+          (ngSubmit)="generateTicket()"
+        >
           <div class="form-group Inconsolata mb-3">
             <label for="avatar">Upload Avatar</label>
-            <div class="label label1 upload">
+            <div class="input-wrapper avatar-wrapper m-auto">
               <div class="avatar m-auto">
                 <img
                   class="avatar-img m-auto"
@@ -22,8 +26,14 @@
                   height="50"
                   alt="avatar"
                 />
-                <input type="file" id="avatar" class="avatar-input" />
               </div>
+              <input
+                type="file"
+                id="avatar"
+                class="form-control avatar-input m-auto"
+                formControlName="avatar"
+                (change)="onFileSelected($event)"
+              />
               <p class="upload-note m-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,30 +63,43 @@
               </p>
             </div>
           </div>
-          <div class="label form-group Inconsolata mb-5">
+          <div class="form-group Inconsolata mb-5">
             <label for="name">Full Name</label>
-            <input type="text" class="form-control mt-2" id="name" />
+            <div class="input-wrapper mt-2">
+              <input
+                type="text"
+                class="form-control mt-2"
+                id="name"
+                formControlName="fullName"
+              />
+            </div>
           </div>
-          <div class="label form-group Inconsolata mb-5">
+          <div class="form-group Inconsolata mb-5">
             <label for="email">Email Address</label>
-            <input
-              type="email"
-              class="form-control mt-2"
-              id="email"
-              placeholder="example@email.com"
-            />
+            <div class="input-wrapper mt-2">
+              <input
+                type="email"
+                class="form-control mt-2"
+                id="email"
+                placeholder="example@email.com"
+                formControlName="email"
+              />
+            </div>
           </div>
-          <div class="label form-group" class="Inconsolata mb-5">
+          <div class="form-group" class="Inconsolata mb-5">
             <label for="github">Github Username</label>
-            <input
-              type="text"
-              class="form-control mt-2"
-              id="github"
-              placeholder="@yourusername"
-            />
+            <div class="input-wrapper mt-2">
+              <input
+                type="text"
+                class="form-control mt-2"
+                id="github"
+                placeholder="@yourusername"
+                formControlName="githubAccountId"
+              />
+            </div>
           </div>
           <div class="text-center m-auto">
-            <button class="btn btn-submit Inconsolata w-800">
+            <button class="btn btn-submit Inconsolata w-800" type="submit">
               Generate My Ticket
             </button>
           </div>
@@ -91,3 +114,6 @@
     </div>
   </div>
 </div>
+@if(previewUrl) {
+<img [src]="previewUrl" alt="Selected Image" />
+}
