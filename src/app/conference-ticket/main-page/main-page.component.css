@@ -18,10 +18,6 @@
   --text-gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
 }
 
-.font-size-default {
-  font-size: 20px;
-}
-
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -31,13 +27,8 @@
   color: hsl(228, 45%, 44%);
 }
 
-.container-fluid {
-  padding: 0;
-  margin: 0;
-}
-
 .root {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--neutral-0);
   background: url(../../../../public/assets/conference-ticket-generator/images/background-mobile.png);
   background-position: center;
@@ -55,15 +46,11 @@
     url(../../../../public/assets/conference-ticket-generator/images/pattern-lines.svg),
     url(../../../../public/assets/conference-ticket-generator/images/pattern-squiggly-line-top.svg),
     url(../../../../public/assets/conference-ticket-generator/images/pattern-squiggly-line-bottom.svg);
-  background-position: center 2%, 5% -15%, 67% 70%, 2%, 100% 10%, 0% 100%;
+  background-position: center 4%, 5% -15%, 67% 70%, 2%, 100% 10%, 0% 100%;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
     no-repeat;
   background-size: auto, auto, auto, auto, auto, auto;
   margin-top: 10px;
-}
-
-.box-container {
-  max-width: 48rem;
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -84,18 +71,126 @@
   }
 }
 
-.top-content {
-  padding: 100px 50px;
-  max-width: max(400px, 70%);
+.box-container {
+  max-width: 28rem;
 }
 
 .top-content-title {
   word-wrap: break-word;
-  font-size: 48px;
+  font-size: 32px;
   line-height: 1.25;
 }
 
 .top-content-description {
+  color: var(--neutral-300);
+  font-size: 20px;
+  width: 90%;
+  word-spacing: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--neutral-500);
+  color: var(--neutral-300);
+  font-family: "Inconsolata";
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 1.5s ease;
+  background-color: hsl(245 19% 35% / 0.3);
+  cursor: pointer;
+}
+
+form {
+}
+
+label {
+  color: var(--neutral-300);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+form .label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+form .label1 {
+  margin: 20px 0 5px 0;
+}
+
+.upload {
+  width: 450px;
+  max-width: 550px;
+  height: 150px;
+  border: 2px dashed var(--neutral-500);
+  border-radius: 10px;
+  background-color: var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: var(--neutral-500);
-  font-size: 24px;
+  text-align: center;
+  margin: 10px auto;
+  transition: border 1s ease;
+}
+
+.btn-submit {
+  width: 100%;
+  border-radius: 12px;
+  padding: 15px;
+  background-color: var(--orange-500);
+  color: hsl(248 70% 10% / 1);
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background-color: var(--orange-700);
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  /* background: url(../../../../public/assets/conference-ticket-generator/images/icon-upload.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%; */
+  background-color: hsl(245 19% 35% / 0.5);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar-img {
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.avatar-input {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.upload-note {
+  color: hsl(252 6% 83% / 1);
+}
+
+.upload-note-svg {
+  stroke: #d2d1d6;
 }
