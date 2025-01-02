@@ -1,36 +1,93 @@
 <div class="container-fluid root">
-  <div class="background-container">
-    <div class="box-container m-auto">
+  <div class="background-container pt-5">
+    <div class="box-container m-auto pt-5">
       <div class="top-content m-auto">
-        <h1 class="top-content-title Inconsolata w-900 m-auto text-center">
+        <h1 class="top-content-title Inconsolata w-800 m-auto text-center">
           Your Journey to Coding Conf 2025 Starts Here!
         </h1>
-        <h2 class="top-content-description w-600 my-3 text-center">
+        <h2 class="top-content-description w-400 my-3 text-center m-auto">
           Secure your spot at next year's biggest coding conference.
         </h2>
       </div>
-      <div class="main-content">
-        <form>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Enter your name"
-            />
+      <div class="main-content mb-5">
+        <form class="m-auto mt-5">
+          <div class="form-group Inconsolata mb-3">
+            <label for="avatar">Upload Avatar</label>
+            <div class="label label1 upload">
+              <div class="avatar m-auto">
+                <img
+                  class="avatar-img m-auto"
+                  src="/assets/conference-ticket-generator/images/icon-upload.svg"
+                  width="50"
+                  height="50"
+                  alt="avatar"
+                />
+                <input type="file" id="avatar" class="avatar-input" />
+              </div>
+              <p class="upload-note m-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    class="upload-note-svg"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"
+                  ></path>
+                  <path
+                    fill="#D1D0D5"
+                    d="M8.004 10.462V7.596ZM8 5.57v-.042Z"
+                  ></path>
+                  <path
+                    class="upload-note-svg"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.004 10.462V7.596M8 5.569v-.042"
+                  ></path>
+                </svg>
+                Upload your photo (JPG or PNG, max size: 500KB)
+              </p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
+          <div class="label form-group Inconsolata mb-5">
+            <label for="name">Full Name</label>
+            <input type="text" class="form-control mt-2" id="name" />
+          </div>
+          <div class="label form-group Inconsolata mb-5">
+            <label for="email">Email Address</label>
             <input
               type="email"
-              class="form-control"
+              class="form-control mt-2"
               id="email"
-              placeholder="Enter your email"
+              placeholder="example@email.com"
             />
+          </div>
+          <div class="label form-group" class="Inconsolata mb-5">
+            <label for="github">Github Username</label>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="github"
+              placeholder="@yourusername"
+            />
+          </div>
+          <div class="text-center m-auto">
+            <button class="btn btn-submit Inconsolata w-800">
+              Generate My Ticket
+            </button>
           </div>
         </form>
       </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      &nbsp;Coded by
+      <a href="https://github.com/shivamsharma01">Shivam Sharma</a>.
     </div>
   </div>
 </div>
