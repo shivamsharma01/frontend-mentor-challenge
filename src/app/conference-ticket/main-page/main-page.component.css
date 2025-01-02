@@ -88,7 +88,12 @@
   word-spacing: 4px;
 }
 
-input {
+.input-wrapper {
+  position: relative;
+  display: block;
+}
+
+.input-wrapper input {
   width: 100%;
   padding: 15px;
   border: 1px solid var(--neutral-500);
@@ -97,47 +102,91 @@ input {
   font-size: 16px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: border-color 1.5s ease;
+  transition: border-color 0.3s ease;
   background-color: hsl(245 19% 35% / 0.3);
   cursor: pointer;
 }
 
-form {
+.input-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid var(--neutral-500);
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.input-wrapper:hover::after,
+.input-wrapper input:focus::after {
+  opacity: 1;
 }
 
 label {
   color: var(--neutral-300);
   font-size: 20px;
   font-weight: 400;
+  display: block;
 }
 
-form .label {
+.avatar-wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-}
-
-form .label1 {
-  margin: 20px 0 5px 0;
-}
-
-.upload {
-  width: 450px;
-  max-width: 550px;
-  height: 150px;
-  border: 2px dashed var(--neutral-500);
-  border-radius: 10px;
-  background-color: var(--neutral-900);
-  display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 450px;
+  max-width: 550px;
+  height: 150px;
   color: var(--neutral-500);
+  border: 2px dashed var(--neutral-500);
+  background-color: var(--neutral-900);
+  border-radius: 10px;
   text-align: center;
   margin: 10px auto;
   transition: border 1s ease;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background-color: hsl(245 19% 35% / 0.5);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  padding: 35px;
+}
+
+.avatar-img {
+  margin: 20px 0;
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.avatar-input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.upload-note {
+  color: hsl(252 6% 83% / 1);
+}
+
+.upload-note-svg {
+  stroke: #d2d1d6;
 }
 
 .btn-submit {
@@ -151,46 +200,4 @@ form .label1 {
 .btn-submit:hover,
 .btn-submit:focus {
   background-color: var(--orange-700);
-}
-
-.avatar {
-  width: 60px;
-  height: 60px;
-  /* background: url(../../../../public/assets/conference-ticket-generator/images/icon-upload.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 60%; */
-  background-color: hsl(245 19% 35% / 0.5);
-  border-radius: 10px;
-  position: relative;
-  cursor: pointer;
-}
-
-.avatar-img {
-  position: absolute;
-  cursor: pointer;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.avatar-input {
-  position: absolute;
-  opacity: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-
-.upload-note {
-  color: hsl(252 6% 83% / 1);
-}
-
-.upload-note-svg {
-  stroke: #d2d1d6;
 }
