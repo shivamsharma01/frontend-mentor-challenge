@@ -9,7 +9,7 @@
           Secure your spot at next year's biggest coding conference.
         </h2>
       </div>
-      <div class="main-content mb-5">
+      <div class="main-content mb-4">
         <form
           class="m-auto mt-5"
           [formGroup]="ticketForm"
@@ -31,39 +31,37 @@
                 type="file"
                 id="avatar"
                 class="form-control avatar-input m-auto"
-                formControlName="avatar"
                 (change)="onFileSelected($event)"
+                (drop)="onFileSelected($event)"
               />
-              <p class="upload-note m-auto">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="none"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    class="upload-note-svg"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"
-                  ></path>
-                  <path
-                    fill="#D1D0D5"
-                    d="M8.004 10.462V7.596ZM8 5.57v-.042Z"
-                  ></path>
-                  <path
-                    class="upload-note-svg"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.004 10.462V7.596M8 5.569v-.042"
-                  ></path>
-                </svg>
-                Upload your photo (JPG or PNG, max size: 500KB)
-              </p>
+              <p>Drag and drop or click to upload</p>
             </div>
+
+            @if (!ticketForm.controls['avatar'].value && !isSubmmited) {
+            <app-field-msg
+              [msg]="'Upload your photo (JPG or PNG, max size: 500KB)'"
+            />
+            } @else if(ticketForm.controls['avatar'].errors) {
+            @if(ticketForm.controls['avatar'].errors['fileTooLarge']) {
+            <app-field-msg
+              [msg]="'File too large. Please upload a photo under 500KB.'"
+              [isError]="true"
+            />
+            }@else if(ticketForm.controls['avatar'].errors['invalidFileType']) {
+            <app-field-msg
+              [msg]="'Invalid file format. Please upload JPG or PNG.'"
+              [isError]="true"
+            />
+            } @else {
+            <app-field-msg
+              [msg]="
+                'Required: Upload your photo (JPG or PNG, max size: 500KB)'
+              "
+              [isError]="true"
+            />
+            } }
           </div>
-          <div class="form-group Inconsolata mb-5">
+          <div class="form-group Inconsolata mb-4">
             <label for="name">Full Name</label>
             <div class="input-wrapper mt-2">
               <input
@@ -73,8 +71,22 @@
                 formControlName="fullName"
               />
             </div>
+              @if (ticketForm.controls['fullName'].touched && ticketForm.controls['fullName'].errors) {
+              @if(ticketForm.controls['fullName'].errors['required']) {
+              <app-field-msg
+                [msg]="'Please enter your full name.'"
+                [isError]="true"
+              />
+              } @else {
+              <app-field-msg
+                [msg]="
+                  'Full Name must be at least 3 characters long and contain only letters.'
+                "
+                [isError]="true"
+              />
+              } }
           </div>
-          <div class="form-group Inconsolata mb-5">
+          <div class="form-group Inconsolata mb-4">
             <label for="email">Email Address</label>
             <div class="input-wrapper mt-2">
               <input
@@ -85,8 +97,22 @@
                 formControlName="email"
               />
             </div>
-          </div>
-          <div class="form-group" class="Inconsolata mb-5">
+              @if (ticketForm.controls['email'].touched && ticketForm.controls['email'].errors) {
+                @if(ticketForm.controls['email'].errors['required']) {
+                <app-field-msg
+                  [msg]="'Email address is required.'"
+                  [isError]="true"
+                />
+                } @else {
+                <app-field-msg
+                  [msg]="
+                    'Please enter a valid email address.'
+                  "
+                  [isError]="true"
+                />
+                } }
+            </div>
+          <div class="form-group" class="Inconsolata mb-4">
             <label for="github">Github Username</label>
             <div class="input-wrapper mt-2">
               <input
@@ -97,7 +123,21 @@
                 formControlName="githubAccountId"
               />
             </div>
-          </div>
+              @if (ticketForm.controls['githubAccountId'].touched && ticketForm.controls['githubAccountId'].errors) {
+                @if(ticketForm.controls['githubAccountId'].errors['required']) {
+                <app-field-msg
+                  [msg]="'Github Account ID is required.'"
+                  [isError]="true"
+                />
+                } @else {
+                <app-field-msg
+                  [msg]="
+                    'Github Account ID must be at least 5 characters long.'
+                  "
+                  [isError]="true"
+                />
+                } }
+            </div>
           <div class="text-center m-auto">
             <button class="btn btn-submit Inconsolata w-800" type="submit">
               Generate My Ticket

@@ -122,8 +122,13 @@
 }
 
 .input-wrapper:hover::after,
-.input-wrapper input:focus::after {
+.input-wrapper:focus::after,
+.input-wrapper:focus-within::after {
   opacity: 1;
+}
+
+.avatar-wrapper:hover p {
+  color: var(--neutral-300);
 }
 
 label {
@@ -179,14 +184,6 @@ label {
   top: 0;
   right: 0;
   bottom: 0;
-}
-
-.upload-note {
-  color: hsl(252 6% 83% / 1);
-}
-
-.upload-note-svg {
-  stroke: #d2d1d6;
 }
 
 .btn-submit {
