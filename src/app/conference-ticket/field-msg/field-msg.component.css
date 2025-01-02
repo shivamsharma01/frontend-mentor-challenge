@@ -1,0 +1,22 @@
+:host {
+  --path-color: hsl(252 6% 83% / 1);
+  --stoke-color: #d2d1d6;
+}
+
+.upload-note {
+  color: var(--path-color);
+}
+
+.upload-note-svg {
+  stroke: var(--stoke-color);
+}
+
+.msg {
+  display: inline;
+}
+
+.error {
+  --path-color: var(--orange-500);
+  --stoke-color: var(--orange-500);
+  color: var(--orange-500);
+}

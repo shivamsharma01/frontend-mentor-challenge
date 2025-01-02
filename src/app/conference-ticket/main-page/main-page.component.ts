@@ -1,15 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { FieldMsgComponent } from '../field-msg/field-msg.component';
+
+const maxSize = 500 * 1024; // 500KB
 
 @Component({
   selector: 'app-main-page',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FieldMsgComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
 })
@@ -17,6 +20,7 @@ export class MainPageComponent {
   ticketForm!: FormGroup;
   selectedImage: File | null = null;
   previewUrl: string | null = null;
+  isSubmmited = false;
 
   ngOnInit() {
     this.ticketForm = new FormGroup({
@@ -36,55 +40,54 @@ export class MainPageComponent {
   generateTicket() {
     console.log(this.ticketForm.value);
     console.log(this.ticketForm.valid);
-    console.log(this.ticketForm.errors);
+    this.isSubmmited = true;
+    if (this.ticketForm.valid) {
+      console.log('valid');
+    } else {
+      this.ticketForm.markAllAsTouched();
+    }
   }
 
   fileValidator(control: any): { [key: string]: boolean } | null {
+    console.log('fileValidator');
     const file = control.value;
-    if (file) {
-      const maxSize = 5 * 1024 * 1024; // 5MB
-      const allowedTypes = ['image/jpeg', 'image/png'];
-
-      if (!allowedTypes.includes(file.type)) {
+    if (file instanceof File) {
+      const allowedTypes = ['jpeg', 'jpg', 'png'];
+      const format = file.name.split('.').pop()?.toLowerCase();
+      console.log(format);
+      console.log('checking format');
+      if (!format || !allowedTypes.includes(format)) {
         return { invalidFileType: true };
       }
+
+      console.log('checking size');
       if (file.size > maxSize) {
+        console.log('too large');
+
         return { fileTooLarge: true };
       }
+      return null;
     }
-    return null;
+    return { required: true };
   }
 
   onFileSelected(event: Event): void {
+    this.previewUrl = null;
+    this.selectedImage = null;
+    this.ticketForm.patchValue({ image: null });
     const input = event.target as HTMLInputElement;
+    console.log('onFileSelected');
+
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
-
       this.selectedImage = file;
-      this.ticketForm.patchValue({ image: file });
-      this.ticketForm.get('image')?.updateValueAndValidity();
-
-      // Preview the image
+      this.ticketForm.patchValue({ avatar: file });
       const reader = new FileReader();
       reader.onload = () => {
         this.previewUrl = reader.result as string;
       };
       reader.readAsDataURL(file);
+      this.ticketForm.get('avatar')?.updateValueAndValidity();
     }
   }
 }
-
-// export function requiredFileType(allowedTypes: string[]) {
-//   return (control: FormControl) => {
-//     const file = control.value;
-//     if (file) {
-//       const extension = file.name.split('.')[1].toLowerCase();
-//       if (!allowedTypes.find((type) => type.toLowerCase() === extension)) {
-//         return {
-//           requiredFileType: true,
-//         };
-//       }
-//     }
-//     return null;
-//   };
-// }
