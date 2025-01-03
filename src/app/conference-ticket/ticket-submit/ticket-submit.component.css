@@ -1,0 +1,36 @@
+.box-container {
+  max-width: 28rem;
+}
+
+.top-content-title {
+  word-wrap: break-word;
+  font-size: 32px;
+  line-height: 1.25;
+}
+
+.top-content-description {
+  color: var(--neutral-300);
+  font-size: 20px;
+  width: 90%;
+  word-spacing: 4px;
+}
+
+label {
+  color: var(--neutral-300);
+  font-size: 20px;
+  font-weight: 400;
+  display: block;
+}
+
+.btn-submit {
+  width: 100%;
+  border-radius: 12px;
+  padding: 15px;
+  background-color: var(--orange-500);
+  color: hsl(248 70% 10% / 1);
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background-color: var(--orange-700);
+}
