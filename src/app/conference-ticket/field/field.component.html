@@ -1,0 +1,14 @@
+<label [for]="id">{{ label }}</label>
+<div class="input-wrapper mt-2">
+  <input
+    type="text"
+    class="form-control mt-2"
+    id="{{ id }}"
+    [formControl]="control"
+    [placeholder]="placeholder"
+  />
+</div>
+@if (control.touched && control.errors) { @for(key of
+getFirstErrorKey(control.errors); track key) {
+<app-field-msg [msg]="errors[key]" [isError]="true"></app-field-msg>
+} }

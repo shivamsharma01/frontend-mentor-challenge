@@ -1,0 +1,51 @@
+.avatar-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  max-width: 550px;
+  height: 150px;
+  color: var(--neutral-500);
+  border: 2px dashed var(--neutral-500);
+  background-color: var(--neutral-900);
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px auto;
+  transition: border 1s ease;
+}
+
+.avatar-wrapper:hover p {
+  color: var(--neutral-300);
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background-color: hsl(245 19% 35% / 0.5);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  padding: 35px;
+}
+
+.avatar-img {
+  margin: 20px 0;
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.avatar-input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
