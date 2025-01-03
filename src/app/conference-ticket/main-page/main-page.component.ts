@@ -6,9 +6,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { FieldMsgComponent } from '../field-msg/field-msg.component';
 import { UploadImageComponent } from '../upload-image/upload-image.component';
-import { FieldComponent } from "../field/field.component";
+import { FieldComponent } from '../field/field.component';
 
 const maxSize = 500 * 1024; // 500KB
 
@@ -17,10 +16,9 @@ const maxSize = 500 * 1024; // 500KB
   imports: [
     ReactiveFormsModule,
     CommonModule,
-    FieldMsgComponent,
     UploadImageComponent,
-    FieldComponent
-],
+    FieldComponent,
+  ],
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css', '../conference-ticket.css'],
 })
@@ -46,7 +44,7 @@ export class MainPageComponent {
   getControl(controlName: string): FormControl {
     return this.ticketForm.get(controlName) as FormControl;
   }
-  
+
   generateTicket() {
     console.log(this.ticketForm.value);
     console.log(this.ticketForm.valid);

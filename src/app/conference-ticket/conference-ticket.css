@@ -34,7 +34,10 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease;
   background-color: hsl(245 19% 35% / 0.3);
-  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer
 }
 
 .input-wrapper::after {

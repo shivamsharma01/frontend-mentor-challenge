@@ -19,7 +19,6 @@ export class UploadImageComponent {
     this.selectedImage = null;
     this.avatar.patchValue(null);
     const input = event.target as HTMLInputElement;
-    console.log('onFileSelected');
 
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
@@ -32,5 +31,12 @@ export class UploadImageComponent {
       reader.readAsDataURL(file);
       this.avatar.updateValueAndValidity();
     }
+  }
+
+  remove() {
+    this.previewUrl = null;
+    this.selectedImage = null;
+    this.avatar.patchValue(null);
+    this.avatar.updateValueAndValidity();
   }
 }
