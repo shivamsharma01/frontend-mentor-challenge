@@ -1,0 +1,39 @@
+<label for="avatar">Upload Avatar</label>
+<div class="input-wrapper avatar-wrapper m-auto">
+  <div class="avatar m-auto">
+    <img
+      class="avatar-img m-auto"
+      src="/assets/conference-ticket-generator/images/icon-upload.svg"
+      width="50"
+      height="50"
+      alt="avatar"
+    />
+  </div>
+  <input
+    type="file"
+    id="avatar"
+    class="form-control avatar-input m-auto"
+    (change)="onFileSelected($event)"
+    (drop)="onFileSelected($event)"
+  />
+  <p>Drag and drop or click to upload</p>
+</div>
+
+@if (!avatar.value && !isSubmmited) {
+<app-field-msg [msg]="'Upload your photo (JPG or PNG, max size: 500KB)'" />
+} @else if(avatar.errors) { @if(avatar.errors['fileTooLarge']) {
+<app-field-msg
+  [msg]="'File too large. Please upload a photo under 500KB.'"
+  [isError]="true"
+/>
+}@else if(avatar.errors['invalidFileType']) {
+<app-field-msg
+  [msg]="'Invalid file format. Please upload JPG or PNG.'"
+  [isError]="true"
+/>
+} @else {
+<app-field-msg
+  [msg]="'Required: Upload your photo (JPG or PNG, max size: 500KB)'"
+  [isError]="true"
+/>
+} }

@@ -7,19 +7,25 @@ import {
   Validators,
 } from '@angular/forms';
 import { FieldMsgComponent } from '../field-msg/field-msg.component';
+import { UploadImageComponent } from '../upload-image/upload-image.component';
+import { FieldComponent } from "../field/field.component";
 
 const maxSize = 500 * 1024; // 500KB
 
 @Component({
   selector: 'app-main-page',
-  imports: [ReactiveFormsModule, CommonModule, FieldMsgComponent],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    FieldMsgComponent,
+    UploadImageComponent,
+    FieldComponent
+],
   templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css',
+  styleUrls: ['./main-page.component.css', '../conference-ticket.css'],
 })
 export class MainPageComponent {
   ticketForm!: FormGroup;
-  selectedImage: File | null = null;
-  previewUrl: string | null = null;
   isSubmmited = false;
 
   ngOnInit() {
@@ -37,6 +43,10 @@ export class MainPageComponent {
     });
   }
 
+  getControl(controlName: string): FormControl {
+    return this.ticketForm.get(controlName) as FormControl;
+  }
+  
   generateTicket() {
     console.log(this.ticketForm.value);
     console.log(this.ticketForm.valid);
@@ -69,25 +79,5 @@ export class MainPageComponent {
       return null;
     }
     return { required: true };
-  }
-
-  onFileSelected(event: Event): void {
-    this.previewUrl = null;
-    this.selectedImage = null;
-    this.ticketForm.patchValue({ image: null });
-    const input = event.target as HTMLInputElement;
-    console.log('onFileSelected');
-
-    if (input.files && input.files.length > 0) {
-      const file = input.files[0];
-      this.selectedImage = file;
-      this.ticketForm.patchValue({ avatar: file });
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.previewUrl = reader.result as string;
-      };
-      reader.readAsDataURL(file);
-      this.ticketForm.get('avatar')?.updateValueAndValidity();
-    }
   }
 }

@@ -1,0 +1,58 @@
+@import "https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap";
+
+.Inconsolata {
+  font-family: "Inconsolata", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 97.5;
+}
+
+:host {
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+  --text-gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+.input-wrapper {
+  position: relative;
+  display: block;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--neutral-500);
+  color: var(--neutral-300);
+  font-family: "Inconsolata";
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+  background-color: hsl(245 19% 35% / 0.3);
+  cursor: pointer;
+}
+
+.input-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid var(--neutral-500);
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.input-wrapper:hover::after,
+.input-wrapper:focus::after,
+.input-wrapper:focus-within::after {
+  opacity: 1;
+}

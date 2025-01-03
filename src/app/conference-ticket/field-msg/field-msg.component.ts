@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-field-msg',
   imports: [],
   templateUrl: './field-msg.component.html',
-  styleUrl: './field-msg.component.css',
+  styleUrls: ['./field-msg.component.css', '../conference-ticket.css'],
 })
 export class FieldMsgComponent {
   @Input('msg') msg!: string;
