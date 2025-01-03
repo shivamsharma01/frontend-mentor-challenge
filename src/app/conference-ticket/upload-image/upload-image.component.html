@@ -1,14 +1,25 @@
 <label for="avatar">Upload Avatar</label>
 <div class="input-wrapper avatar-wrapper m-auto">
-  <div class="avatar m-auto">
+  <div class="avatar mx-auto my-3">
+    @if (previewUrl === null) {
     <img
-      class="avatar-img m-auto"
+      class="avatar-img m-auto cursor-pointer"
       src="/assets/conference-ticket-generator/images/icon-upload.svg"
       width="50"
       height="50"
       alt="avatar"
     />
+    } @else {
+    <img
+      class="avatar-img m-auto"
+      [src]="previewUrl"
+      width="60"
+      height="60"
+      alt="avatar"
+    />
+    }
   </div>
+  @if (previewUrl === null) {
   <input
     type="file"
     id="avatar"
@@ -17,6 +28,21 @@
     (drop)="onFileSelected($event)"
   />
   <p>Drag and drop or click to upload</p>
+  } @else {
+  <div class="d-flex justify-content-center align-items-center gap-2">
+    <div class="img-btn" (click)="remove()">Remove Image</div>
+    <div class="img-btn" style="position: relative">
+      <label>Change Image</label>
+      <input
+        type="file"
+        id="avatar"
+        class="form-control avatar-input m-auto"
+        (change)="onFileSelected($event)"
+        (drop)="onFileSelected($event)"
+      />
+    </div>
+  </div>
+  }
 </div>
 
 @if (!avatar.value && !isSubmmited) {
