@@ -1,0 +1,63 @@
+<div class="box-container m-auto pt-5">
+  <div class="top-content m-auto">
+    <h1 class="top-content-title Inconsolata w-800 m-auto text-center">
+      Your Journey to Coding Conf 2025 Starts Here!
+    </h1>
+    <h2 class="top-content-description w-400 my-3 text-center m-auto">
+      Secure your spot at next year's biggest coding conference.
+    </h2>
+  </div>
+  <div class="main-content mb-4">
+    <form
+      class="m-auto mt-5"
+      [formGroup]="ticketForm"
+      (ngSubmit)="generateTicket()"
+    >
+      <div class="form-group Inconsolata mb-3">
+        <app-upload-image
+          [avatar]="ticketForm.get('avatar')"
+          [isSubmmited]="isSubmmited"
+        ></app-upload-image>
+      </div>
+      <div class="form-group Inconsolata mb-4">
+        <app-field
+          [label]="'Full Name'"
+          [id]="'name'"
+          [control]="getControl('fullName')"
+          [errors]="{
+            required: 'Please enter your full name.',
+            minlength:
+              'Full Name must be at least 3 characters long and contain only letters.'
+          }"
+        ></app-field>
+      </div>
+      <div class="form-group Inconsolata mb-4">
+        <app-field
+          [label]="'Email Address'"
+          [id]="'email'"
+          [control]="getControl('email')"
+          [errors]="{
+            required: 'Email address is required.',
+            email: 'Please enter a valid email address.'
+          }"
+        ></app-field>
+      </div>
+      <div class="form-group" class="Inconsolata mb-4">
+        <app-field
+          [label]="'Github Username'"
+          [id]="'github'"
+          [control]="getControl('githubAccountId')"
+          [errors]="{
+            required: 'Github Account ID is required.',
+            minlength: 'Github Account ID must be at least 5 characters long.'
+          }"
+        ></app-field>
+      </div>
+      <div class="text-center m-auto">
+        <button class="btn btn-submit Inconsolata w-800" type="submit">
+          Generate My Ticket
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
