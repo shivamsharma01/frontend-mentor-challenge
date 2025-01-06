@@ -25,12 +25,12 @@
 
 .input-wrapper input {
   width: 100%;
-  padding: 15px;
+  padding: 1em;
   border: 1px solid var(--neutral-500);
   color: var(--neutral-300);
   font-family: "Inconsolata";
-  font-size: 16px;
-  border-radius: 10px;
+  font-size: 1em;
+  border-radius: 0.5em;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease;
   background-color: hsl(245 19% 35% / 0.3);
@@ -49,7 +49,7 @@
   right: -5px;
   bottom: -5px;
   border: 2px solid var(--neutral-500);
-  border-radius: 12px;
+  border-radius: 0.5em;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;

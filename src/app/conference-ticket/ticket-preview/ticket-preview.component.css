@@ -1,0 +1,95 @@
+.ticket-container {
+  font-family: "Inconsolata";
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+}
+
+h1 span {
+  font-family: "Inconsolata";
+  font-weight: 700;
+  background: -webkit-linear-gradient(left, var(--orange-500), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info {
+  font-size: 1.25em;
+  color: var(--neutral-500);
+  font-family: "Inconsolata";
+  font-weight: 700;
+}
+
+p span {
+  color: var(--orange-500);
+}
+
+.ticket {
+  height: 50%;
+}
+.ticket-pic-container {
+  position: relative;
+  width: 600px;
+  height: 280px;
+  z-index: 1;
+}
+
+.ticket-svg {
+  position: absolute;
+  z-index: 2;
+}
+
+.avatar-img {
+  position: absolute;
+  width: 80px;
+  left: 20px;
+  bottom: 20px;
+  border-radius: 10px;
+}
+
+.event-date {
+  position: absolute;
+  left: 72px;
+  top: 65px;
+  color: var(--neutral-500);
+  font-weight: 600;
+}
+
+.logo-full {
+  position: absolute;
+  height: 32px;
+  top: 25px;
+  left: 20px;
+}
+
+.fullname {
+  font-size: 1.75em;
+  position: absolute;
+  left: 115px;
+  bottom: 42px;
+}
+
+.github-icon {
+  position: absolute;
+  width: 20px;
+  left: 115px;
+  bottom: 30px;
+}
+
+.github-id {
+  position: absolute;
+  left: 140px;
+  bottom: 12px;
+}
+
+.generated-id {
+  position: absolute;
+  right: 20px;
+  top: 120px;
+  transform: rotate(90deg);
+  color: var(--neutral-500);
+  font-size: 1.5em;
+  font-weight: 600;
+}

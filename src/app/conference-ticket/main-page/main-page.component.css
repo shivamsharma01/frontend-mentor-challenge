@@ -1,6 +1,8 @@
 .attribution {
-  font-size: 11px;
+  position: absolute;
+  font-size: 1em;
   text-align: center;
+  bottom: 0;
 }
 
 .attribution a {
@@ -30,7 +32,6 @@
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
     no-repeat;
   background-size: auto, auto, auto, auto, auto, auto;
-  margin-top: 10px;
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
