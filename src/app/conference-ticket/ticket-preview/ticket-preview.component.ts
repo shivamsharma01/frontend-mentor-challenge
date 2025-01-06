@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './ticket-preview.component.html',
   styleUrls: ['./ticket-preview.component.css', '../conference-ticket.css'],
 })
-export class TicketPreviewComponent {}
+export class TicketPreviewComponent {
+  name: string = 'Jonatan Kristof';
+  email: string = 'Jonatan@gmail.com';
+  githubId: string = 'jonatankristof0101';
+}

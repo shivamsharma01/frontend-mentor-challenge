@@ -1,6 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,4 +8,9 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css', '../conference-ticket.css'],
 })
-export class MainPageComponent {}
+export class MainPageComponent {
+
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Frontend Mentor | Conference ticket generator');
+  }
+}
