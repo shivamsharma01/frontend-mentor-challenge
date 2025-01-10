@@ -53,8 +53,14 @@ export class TicketSubmitComponent {
     console.log(this.ticketForm.valid);
     this.isSubmmited = true;
     if (this.ticketForm.valid) {
-      console.log('valid');
-      this.router.navigate(['/conference/preview']);
+      this.router.navigate(['/conference/preview'], {
+        state: {
+          name: this.ticketForm.value.fullName,
+          email: this.ticketForm.value.email,
+          image: this.ticketForm.value.avatar,
+          id: this.ticketForm.value.githubAccountId,
+        },
+      });
     } else {
       this.ticketForm.markAllAsTouched();
     }

@@ -1,10 +1,7 @@
-.ticket-container {
-  font-family: "Inconsolata";
-}
-
 h1 {
-  font-size: 3.5em;
+  font-size: 2em;
   font-weight: 700;
+  text-align: center;
 }
 
 h1 span {
@@ -17,77 +14,87 @@ h1 span {
 
 .info {
   font-size: 1.25em;
-  color: var(--neutral-500);
+  color: var(--neutral-300);
   font-family: "Inconsolata";
-  font-weight: 700;
+  font-weight: 500;
 }
 
 p span {
   color: var(--orange-500);
 }
 
-.ticket {
-  height: 50%;
-}
-.ticket-pic-container {
+.display-data {
+  width: 90%;
+  max-width: 800px;
+  padding: 0.5rem;
+  margin: auto;
   position: relative;
-  width: 600px;
-  height: 280px;
-  z-index: 1;
+  z-index: 20;
+  text-align: center;
+  font-family: "Inconsolata";
 }
 
-.ticket-svg {
-  position: absolute;
-  z-index: 2;
+.ticket-pic-container {
+  background-color: var(--Neutral-900);
+  background: url(../../../../public/assets/conference-ticket-generator/images/pattern-ticket.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  aspect-ratio: 16 / 9;
+  max-width: 500px;
+  padding: 1rem;
+  margin: auto;
+  position: relative;
+  border-radius: 0.5rem;
 }
 
 .avatar-img {
   position: absolute;
-  width: 80px;
-  left: 20px;
-  bottom: 20px;
+  width: 15%;
+  left: 5%;
+  bottom: 28%;
   border-radius: 10px;
 }
 
 .event-date {
   position: absolute;
-  left: 72px;
-  top: 65px;
+  left: 18%;
+  top: 27%;
   color: var(--neutral-500);
   font-weight: 600;
 }
 
 .logo-full {
   position: absolute;
-  height: 32px;
-  top: 25px;
-  left: 20px;
+  height: 15%;
+  top: 10%;
+  left: 5%;
 }
 
 .fullname {
-  font-size: 1.75em;
+  font-size: 1.4em;
+  font-weight: 400;
   position: absolute;
-  left: 115px;
-  bottom: 42px;
+  left: 23.5%;
+  bottom: 32%;
 }
 
 .github-icon {
   position: absolute;
-  width: 20px;
-  left: 115px;
-  bottom: 30px;
+  width: 5%;
+  left: 23%;
+  bottom: 29%;
 }
 
 .github-id {
   position: absolute;
-  left: 140px;
-  bottom: 12px;
+  left: 30%;
+  bottom: 22.5%;
 }
 
 .generated-id {
   position: absolute;
-  right: 20px;
-  top: 120px;
+  right: 1%;
+  top: 35%;
   transform: rotate(90deg);
   color: var(--neutral-500);
   font-size: 1.5em;
