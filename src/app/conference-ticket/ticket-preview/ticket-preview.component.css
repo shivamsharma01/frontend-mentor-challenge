@@ -37,7 +37,7 @@
 
 .ticket-pic-container {
   background-color: var(--Neutral-900);
-  background: url(/assets/conference-ticket-generator/images/pattern-ticket.svg);
+  background: url(./../../../../public/assets/conference-ticket-generator/images/pattern-ticket.svg);
   background-size: contain;
   background-repeat: no-repeat;
   aspect-ratio: 16 / 9;
