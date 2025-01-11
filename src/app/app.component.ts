@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { skip } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,17 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'frontend-mentor-challenge';
+
+  route = inject(ActivatedRoute);
+  router = inject(Router);
+
+  ngOnInit() {
+    this.route.queryParams.pipe(skip(1)).subscribe((params) => {
+      let project = params['p'];
+      if (!project) {
+        project = 'challenges';
+      }
+      this.router.navigate(['/' + 'conference']);
+    });
+  }
 }
