@@ -49,8 +49,6 @@ export class TicketSubmitComponent {
   }
 
   generateTicket() {
-    console.log(this.ticketForm.value);
-    console.log(this.ticketForm.valid);
     this.isSubmmited = true;
     if (this.ticketForm.valid) {
       this.router.navigate(['/conference/preview'], {
@@ -67,21 +65,14 @@ export class TicketSubmitComponent {
   }
 
   fileValidator(control: any): { [key: string]: boolean } | null {
-    console.log('fileValidator');
     const file = control.value;
     if (file instanceof File) {
       const allowedTypes = ['jpeg', 'jpg', 'png'];
       const format = file.name.split('.').pop()?.toLowerCase();
-      console.log(format);
-      console.log('checking format');
       if (!format || !allowedTypes.includes(format)) {
         return { invalidFileType: true };
       }
-
-      console.log('checking size');
       if (file.size > maxSize) {
-        console.log('too large');
-
         return { fileTooLarge: true };
       }
       return null;
