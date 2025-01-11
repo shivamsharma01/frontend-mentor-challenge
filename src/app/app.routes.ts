@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ChallengeListComponent } from './challenge-list/challenge-list.component';
 
 export const routes: Routes = [
   {
@@ -7,8 +8,12 @@ export const routes: Routes = [
       import('./conference-ticket/').then((m) => m.CONFERENCER_ROUTES),
   },
   {
+    path: 'challenges',
+    component: ChallengeListComponent,
+  },
+  {
     path: '',
-    redirectTo: 'conference',
+    redirectTo: 'challenges',
     pathMatch: 'full',
   },
 ];
