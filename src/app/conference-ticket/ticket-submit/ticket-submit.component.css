@@ -1,10 +1,15 @@
 .box-container {
-  max-width: 28rem;
+  width: 90%;
+  max-width: 800px;
+}
+
+.top-content {
+  padding-top: 50px;
 }
 
 .top-content-title {
   word-wrap: break-word;
-  font-size: 32px;
+  font-size: 1.5em;
   line-height: 1.25;
 }
 
@@ -15,11 +20,8 @@
   word-spacing: 4px;
 }
 
-label {
-  color: var(--neutral-300);
-  font-size: 20px;
-  font-weight: 400;
-  display: block;
+.main-content {
+  width: 90%;
 }
 
 .btn-submit {
@@ -33,4 +35,10 @@ label {
 .btn-submit:hover,
 .btn-submit:focus {
   background-color: var(--orange-700);
+}
+
+@media (min-width: 481px) {
+  .top-content-title {
+    font-size: 3em;
+  }
 }

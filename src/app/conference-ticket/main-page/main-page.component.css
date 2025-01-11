@@ -1,8 +1,6 @@
 .attribution {
-  position: absolute;
   font-size: 1em;
   text-align: center;
-  bottom: 0;
 }
 
 .attribution a {
@@ -12,7 +10,7 @@
 .root {
   min-height: 100vh;
   color: var(--neutral-0);
-  background: url(../../../../public/assets/conference-ticket-generator/images/background-mobile.png);
+  background: url(/assets/conference-ticket-generator/images/background-mobile.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,12 +22,12 @@
   width: 100%;
   min-height: 100vh;
   background: rgba(255, 255, 255, 0.8);
-  background: url(../../../../public/assets/conference-ticket-generator/images/logo-full.svg),
-    url(../../../../public/assets/conference-ticket-generator/images/pattern-circle.svg),
-    url(../../../../public/assets/conference-ticket-generator/images/pattern-circle.svg),
-    url(../../../../public/assets/conference-ticket-generator/images/pattern-lines.svg),
-    url(../../../../public/assets/conference-ticket-generator/images/pattern-squiggly-line-top.svg),
-    url(../../../../public/assets/conference-ticket-generator/images/pattern-squiggly-line-bottom.svg);
+  background: url(/assets/conference-ticket-generator/images/logo-full.svg),
+    url(/assets/conference-ticket-generator/images/pattern-circle.svg),
+    url(/assets/conference-ticket-generator/images/pattern-circle.svg),
+    url(/assets/conference-ticket-generator/images/pattern-lines.svg),
+    url(/assets/conference-ticket-generator/images/pattern-squiggly-line-top.svg),
+    url(/assets/conference-ticket-generator/images/pattern-squiggly-line-bottom.svg);
   background-position: center 4%, 5% -15%, 67% 70%, 2%, 100% 10%, 0% 100%;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
     no-repeat;
@@ -38,7 +36,7 @@
 
 @media (min-width: 481px) and (max-width: 1024px) {
   .root {
-    background: url(../../../../public/assets/conference-ticket-generator/images/background-tablet.png);
+    background: url(/assets/conference-ticket-generator/images/background-tablet.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,7 +45,7 @@
 
 @media (min-width: 1025px) {
   .root {
-    background: url(../../../../public/assets/conference-ticket-generator/images/background-desktop.png);
+    background: url(/assets/conference-ticket-generator/images/background-desktop.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

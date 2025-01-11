@@ -4,8 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 450px;
-  max-width: 550px;
   height: 150px;
   color: var(--neutral-500);
   border: 2px dashed var(--neutral-500);
@@ -49,7 +47,7 @@
   text-decoration: underline;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
 .avatar-input {

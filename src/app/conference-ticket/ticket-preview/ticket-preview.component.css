@@ -1,10 +1,10 @@
-h1 {
+.main-text {
   font-size: 2em;
   font-weight: 700;
   text-align: center;
 }
 
-h1 span {
+.main-text span {
   font-family: "Inconsolata";
   font-weight: 700;
   background: -webkit-linear-gradient(left, var(--orange-500), #fff);
@@ -12,15 +12,16 @@ h1 span {
   -webkit-text-fill-color: transparent;
 }
 
-.info {
+.desc-text {
   font-size: 1.25em;
   color: var(--neutral-300);
   font-family: "Inconsolata";
   font-weight: 500;
 }
 
-p span {
+.desc-text span {
   color: var(--orange-500);
+  font-family: "Inconsolata";
 }
 
 .display-data {
@@ -36,13 +37,12 @@ p span {
 
 .ticket-pic-container {
   background-color: var(--Neutral-900);
-  background: url(../../../../public/assets/conference-ticket-generator/images/pattern-ticket.svg);
+  background: url(/assets/conference-ticket-generator/images/pattern-ticket.svg);
   background-size: contain;
   background-repeat: no-repeat;
   aspect-ratio: 16 / 9;
   max-width: 500px;
-  padding: 1rem;
-  margin: auto;
+  margin-top: calc(min(100px, 50vh));
   position: relative;
   border-radius: 0.5rem;
 }
@@ -53,12 +53,14 @@ p span {
   left: 5%;
   bottom: 28%;
   border-radius: 10px;
+  aspect-ratio: 1 / 1;
 }
 
 .event-date {
   position: absolute;
   left: 18%;
-  top: 27%;
+  font-size: 0.8em;
+  top: 30%;
   color: var(--neutral-500);
   font-weight: 600;
 }
@@ -71,11 +73,14 @@ p span {
 }
 
 .fullname {
-  font-size: 1.4em;
-  font-weight: 400;
+  font-size: 1em;
+  top: 45%;
+  font-weight: 500;
   position: absolute;
   left: 23.5%;
-  bottom: 32%;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-family: "Inconsolata";
 }
 
 .github-icon {
@@ -88,7 +93,8 @@ p span {
 .github-id {
   position: absolute;
   left: 30%;
-  bottom: 22.5%;
+  bottom: 28%;
+  margin-bottom: 0;
 }
 
 .generated-id {
@@ -99,4 +105,19 @@ p span {
   color: var(--neutral-500);
   font-size: 1.5em;
   font-weight: 600;
+}
+
+@media (min-width: 481px) {
+  .main-text {
+    font-size: 3.5em;
+  }
+
+  .fullname {
+    font-size: 1.4em;
+    bottom: 45%;
+  }
+  .event-date {
+    top: 27%;
+    font-size: 1em;
+  }
 }

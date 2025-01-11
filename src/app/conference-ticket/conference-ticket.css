@@ -38,7 +38,7 @@
 }
 
 .cursor-pointer {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .input-wrapper::after {
@@ -59,4 +59,11 @@
 .input-wrapper:focus::after,
 .input-wrapper:focus-within::after {
   opacity: 1;
+}
+
+label {
+  color: var(--neutral-300);
+  font-size: 20px;
+  font-weight: 400;
+  display: block;
 }
