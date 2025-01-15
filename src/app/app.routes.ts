@@ -8,12 +8,17 @@ export const routes: Routes = [
       import('./conference-ticket/').then((m) => m.CONFERENCER_ROUTES),
   },
   {
+    path: 'bento-ui',
+    loadChildren: () =>
+      import('./bento-grid/').then((m) => m.BENTO_ROUTES),
+  },
+  {
     path: 'challenges',
     component: ChallengeListComponent,
   },
   {
     path: '',
-    redirectTo: 'challenges',
+    redirectTo: 'bento-ui',
     pathMatch: 'full',
   },
 ];
