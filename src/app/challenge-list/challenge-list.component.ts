@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,4 +10,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class ChallengeListComponent {
 
+  constructor(private titleService: Title) {
+      this.titleService.setTitle('Frontend Mentor | Challenge List');
+    }
 }
