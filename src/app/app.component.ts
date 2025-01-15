@@ -20,7 +20,7 @@ export class AppComponent {
       if (!project) {
         project = 'challenges';
       }
-      this.router.navigate(['/' + 'conference']);
+      this.router.navigate(['/' + project]);
     });
   }
 }
