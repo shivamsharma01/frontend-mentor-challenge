@@ -15,12 +15,13 @@ export class AppComponent {
   router = inject(Router);
 
   ngOnInit() {
+    console.log('ngOnInit');
     this.route.queryParams.pipe(skip(1)).subscribe((params) => {
-      let project = params['p'];
+      let project = params['p'];     
       if (!project) {
-        project = 'challenges';
+        return;
       }
-      this.router.navigate(['/' + project]);
+      this.router.navigate([project]);
     });
   }
 }
