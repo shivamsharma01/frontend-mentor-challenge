@@ -18,7 +18,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'bento-ui',
+    redirectTo: 'challenges',
     pathMatch: 'full',
   },
 ];
