@@ -13,6 +13,11 @@ export const routes: Routes = [
       import('./bento-grid/').then((m) => m.BENTO_ROUTES),
   },
   {
+    path: 'recipe-page',
+    loadChildren: () =>
+      import('./recipe-page/').then((m) => m.RECIPE_ROUTES),
+  },
+  {
     path: 'challenges',
     component: ChallengeListComponent,
   },
